@@ -26,6 +26,9 @@ The application is a unified monorepo utilizing **Next.js 16 App Router** as the
 1. **MainNavigation:** Header menu structure (supports localized links).
 2. **Footer:** Footer columns, copyright, and social links.
 3. **SiteSettings:** Global SEO defaults, contact information, and store configuration.
+4. **HeroBanner:** Localized homepage hero content with image and CTA.
+5. **FeaturedItems:** Localized two-card editorial feature strip for the homepage.
+6. **BlogSidebar:** Localized editorial sidebar sections for the blog index.
 
 ## Invariants and Constraints
 1. **Localization:** Every content collection (Posts, Books, Categories, Authors) must have `localization: true` enabled in its Payload config.
