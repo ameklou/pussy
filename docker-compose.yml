@@ -1,18 +1,22 @@
-version: '3'
+version: '3.8'
 
 services:
   payload:
-    image: node:20-alpine
-    ports:
-      - '3000:3000'
-    volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
-    working_dir: /home/node/app/
-    command: sh -c "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm dev"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: payload-app
+    restart: unless-stopped
     env_file:
       - .env
-
+    volumes:
+      - payload_media:/app/media
+    networks:
+      - dokploy-network
 
 volumes:
-  node_modules:
+  payload_media:
+
+networks:
+  dokploy-network:
+    external: true
