@@ -7,6 +7,17 @@ type LayoutDictionary = {
   readonly languages: Record<Locale, string>
 }
 
+type BlogDictionary = {
+  readonly readMore: string
+  readonly viewArchive: string
+  readonly moreAbout: string
+  readonly relatedPosts: string
+  readonly by: string
+  readonly categories: string
+  readonly allPosts: string
+  readonly noPosts: string
+}
+
 type FoundationDictionary = {
   readonly foundation: {
     readonly eyebrow: string
@@ -18,6 +29,7 @@ type FoundationDictionary = {
     readonly description: string
   }
   readonly layout: LayoutDictionary
+  readonly blog: BlogDictionary
 }
 
 const dictionaries = {

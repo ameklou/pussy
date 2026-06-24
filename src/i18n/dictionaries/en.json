@@ -14,5 +14,15 @@
       "en": "EN",
       "fr": "FR"
     }
+  },
+  "blog": {
+    "readMore": "READ MORE →",
+    "viewArchive": "VIEW NEWS ARCHIVE →",
+    "moreAbout": "MORE ABOUT US →",
+    "relatedPosts": "Related posts",
+    "by": "by",
+    "categories": "Categories",
+    "allPosts": "All posts",
+    "noPosts": "No posts found."
   }
 }
