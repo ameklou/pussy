@@ -54,6 +54,23 @@ export const Footer: GlobalConfig = {
       localized: true,
     },
     {
+      name: 'privacyLink',
+      type: 'group',
+      fields: [
+        {
+          name: 'label',
+          type: 'text',
+          required: true,
+          localized: true,
+        },
+        {
+          name: 'url',
+          type: 'text',
+          required: true,
+        },
+      ],
+    },
+    {
       name: 'socialLinks',
       type: 'array',
       fields: [

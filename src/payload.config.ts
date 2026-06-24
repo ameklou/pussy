@@ -11,7 +11,9 @@ import { Categories } from './collections/Categories'
 import { Media } from './collections/Media'
 import { Posts } from './collections/Posts'
 import { Users } from './collections/Users'
+import { FeaturedItems } from './globals/FeaturedItems'
 import { Footer } from './globals/Footer'
+import { HeroBanner } from './globals/HeroBanner'
 import { MainNavigation } from './globals/MainNavigation'
 import { SiteSettings } from './globals/SiteSettings'
 
@@ -26,7 +28,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Authors, Categories, Posts, Books],
-  globals: [MainNavigation, Footer, SiteSettings],
+  globals: [MainNavigation, Footer, SiteSettings, HeroBanner, FeaturedItems],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

@@ -99,11 +99,15 @@ export interface Config {
     'main-navigation': MainNavigation;
     footer: Footer;
     'site-settings': SiteSetting;
+    'hero-banner': HeroBanner;
+    'featured-items': FeaturedItem;
   };
   globalsSelect: {
     'main-navigation': MainNavigationSelect<false> | MainNavigationSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+    'hero-banner': HeroBannerSelect<false> | HeroBannerSelect<true>;
+    'featured-items': FeaturedItemsSelect<false> | FeaturedItemsSelect<true>;
   };
   locale: 'en' | 'fr';
   widgets: {
@@ -549,6 +553,10 @@ export interface Footer {
       }[]
     | null;
   copyright?: string | null;
+  privacyLink: {
+    label: string;
+    url: string;
+  };
   socialLinks?:
     | {
         platform: 'x' | 'instagram' | 'facebook' | 'linkedin' | 'youtube';
@@ -569,6 +577,39 @@ export interface SiteSetting {
   defaultSeoDescription: string;
   contactEmail?: string | null;
   storeCurrency: 'eur' | 'usd' | 'gbp' | 'xof';
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-banner".
+ */
+export interface HeroBanner {
+  id: number;
+  heading: string;
+  subtitle?: string | null;
+  image: number | Media;
+  ctaLabel?: string | null;
+  ctaUrl?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "featured-items".
+ */
+export interface FeaturedItem {
+  id: number;
+  items?:
+    | {
+        title: string;
+        subtitle?: string | null;
+        image: number | Media;
+        url?: string | null;
+        type: 'internal' | 'external';
+        id?: string | null;
+      }[]
+    | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -609,6 +650,12 @@ export interface FooterSelect<T extends boolean = true> {
         id?: T;
       };
   copyright?: T;
+  privacyLink?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+      };
   socialLinks?:
     | T
     | {
@@ -629,6 +676,39 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   defaultSeoDescription?: T;
   contactEmail?: T;
   storeCurrency?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-banner_select".
+ */
+export interface HeroBannerSelect<T extends boolean = true> {
+  heading?: T;
+  subtitle?: T;
+  image?: T;
+  ctaLabel?: T;
+  ctaUrl?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "featured-items_select".
+ */
+export interface FeaturedItemsSelect<T extends boolean = true> {
+  items?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        image?: T;
+        url?: T;
+        type?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
