@@ -4,11 +4,11 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Epic 2: Content Modeling & Data Layer complete
+- Epic 3: Global Layout & UI Shell complete
 
 ## Current Goal
 
-- Begin Epic 3: build public-facing frontend pages and Server Component data fetching for the blog and bookstore.
+- Begin Epic 4: content listings, article detail, and bookstore catalog pages.
 
 ## Completed
 
@@ -21,6 +21,13 @@ Update this file whenever the current phase, active feature, or implementation s
 - Payload globals: MainNavigation, Footer, SiteSettings with localized labels and public read access.
 - User roles (`admin`, `editor`) with JWT persistence and access-control helpers.
 - Public read access restricted to published posts/books; writes restricted to admin/editor.
+- Epic 3: Global Layout & UI Shell
+- Localized root layout with `next/font` (Inter + Fraunces), `html[lang]`, and CSS terracotta token.
+- Sticky header with "Books" wordmark, Payload-driven navigation, terracotta triangle accent, cart badge, and language switcher.
+- 40/60 split hero banner backed by new `HeroBanner` Payload global.
+- Two-column terracotta featured-cards row backed by new `FeaturedItems` Payload global.
+- Full-width terracotta footer bar with localized copyright and privacy link from `Footer` global.
+- Zustand cart store scaffold and locale-aware link helper.
 
 ## In Progress
 
@@ -28,7 +35,7 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Next Up
 
-- Epic 3: Public frontend pages and data fetching for blog and bookstore.
+- Epic 4: Content listings (blog, bookstore), article detail, and catalog pages.
 
 ## Open Questions
 
@@ -49,3 +56,4 @@ Update this file whenever the current phase, active feature, or implementation s
 - 2026-06-24: Started Epic 1 from `.opencode/features/01-foundation-infrastructure.md`.
 - 2026-06-24: Completed Epic 1 implementation. Verification: `pnpm exec tsc --noEmit` passed; `pnpm lint` passed with unrelated warnings in `src/app/my-route/route.ts` and `tests/e2e/admin.e2e.spec.ts`; `pnpm generate:types` passed; `pnpm build` passed; focused Playwright frontend E2E passed 5/5. `pnpm test:int` is blocked locally because the available Postgres instance does not have the placeholder `postgres` role, and Docker/OrbStack is not running to start the compose Postgres service.
 - 2026-06-24: Started and completed Epic 2 from `.opencode/features/02-content-modeling-data.md`. Added collections (Authors, Categories, Posts, Books), globals (MainNavigation, Footer, SiteSettings), user roles, access-control helpers, slugify utility/hook, and unit tests. Verification: `pnpm exec tsc --noEmit` passed; `pnpm lint` passed with the same unrelated warnings; `pnpm generate:types` and `pnpm generate:importmap` passed; focused unit tests passed 14/14; `pnpm build` passed. `pnpm test:int` remains blocked for the same Postgres reason.
+- 2026-06-24: Started and completed Epic 3 from `.opencode/features/03-global-layout-ui-shell.md`. Added `HeroBanner` and `FeaturedItems` Payload globals, extended `Footer` with a privacy link group, tokenized terracotta `#9A3412` in `globals.css` and `DESIGN.md`, loaded Inter/Fraunces via `next/font`, created `[locale]/layout.tsx` with sticky header/footer shell, and composed the homepage with `HeroBanner` and `FeaturedCards`. Added `zustand` cart store, `LanguageSwitcher`, `CartBadge`, and locale-aware link helper. Updated E2E tests to assert the editorial shell. Verification: `pnpm exec tsc --noEmit` passed; `pnpm lint` passed with the same unrelated warnings; `pnpm generate:types` and `pnpm generate:importmap` passed; `pnpm test:int` passed 15/15; `pnpm build` passed; focused Playwright frontend E2E passed 5/5.
