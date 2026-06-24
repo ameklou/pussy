@@ -1,0 +1,11 @@
+{
+  "foundation": {
+    "eyebrow": "Fondation francaise",
+    "heading": "French foundation UI",
+    "summary": "Le routage localise est pret pour l'interface editoriale publique."
+  },
+  "metadata": {
+    "title": "French foundation UI",
+    "description": "Interface de fondation pour le frontend public francais."
+  }
+}

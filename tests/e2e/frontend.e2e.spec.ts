@@ -1,20 +1,38 @@
-import { test, expect, Page } from '@playwright/test'
+import { expect, test } from '@playwright/test'
+
+const baseUrl = 'http://localhost:3000'
 
 test.describe('Frontend', () => {
-  let page: Page
+  test('redirects / to /en', async ({ page }) => {
+    await page.goto(`${baseUrl}/`)
 
-  test.beforeAll(async ({ browser }, testInfo) => {
-    const context = await browser.newContext()
-    page = await context.newPage()
+    await expect(page).toHaveURL(`${baseUrl}/en`)
   })
 
-  test('can go on homepage', async ({ page }) => {
-    await page.goto('http://localhost:3000')
+  test('renders the English foundation UI at /en', async ({ page }) => {
+    await page.goto(`${baseUrl}/en`)
 
-    await expect(page).toHaveTitle(/Payload Blank Template/)
+    await expect(page).toHaveURL(`${baseUrl}/en`)
+    await expect(page.getByRole('heading', { name: 'English foundation UI' })).toBeVisible()
+  })
 
-    const heading = page.locator('h1').first()
+  test('renders the French foundation UI at /fr', async ({ page }) => {
+    await page.goto(`${baseUrl}/fr`)
 
-    await expect(heading).toHaveText('Welcome to your new project.')
+    await expect(page).toHaveURL(`${baseUrl}/fr`)
+    await expect(page.getByRole('heading', { name: 'French foundation UI' })).toBeVisible()
+  })
+
+  test('falls back invalid public locale paths to /en', async ({ page }) => {
+    await page.goto(`${baseUrl}/de`)
+
+    await expect(page).toHaveURL(`${baseUrl}/en`)
+    await expect(page.getByRole('heading', { name: 'English foundation UI' })).toBeVisible()
+  })
+
+  test('keeps /admin at /admin', async ({ page }) => {
+    await page.goto(`${baseUrl}/admin`)
+
+    await expect(page).toHaveURL(`${baseUrl}/admin`)
   })
 })

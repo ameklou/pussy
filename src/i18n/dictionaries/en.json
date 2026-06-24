@@ -1,0 +1,11 @@
+{
+  "foundation": {
+    "eyebrow": "English foundation",
+    "heading": "English foundation UI",
+    "summary": "Locale-aware routing is ready for the public editorial frontend."
+  },
+  "metadata": {
+    "title": "English foundation UI",
+    "description": "Foundation UI for the English public frontend."
+  }
+}
