@@ -1,5 +1,5 @@
 # Base image: Debian slim ensures compatibility with native modules (e.g., sharp)
-FROM node:20-bookworm-slim AS base
+FROM node:22-bookworm-slim AS base
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # Stage 1: Build the application
