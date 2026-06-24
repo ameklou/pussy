@@ -13,15 +13,15 @@ This is the Epic 1 public frontend design contract for a minimalist bilingual ed
 
 - Use semantic tokens from `globals.css` only: `background`, `foreground`, `card`, `card-foreground`, `popover`, `primary`, `primary-foreground`, `secondary`, `secondary-foreground`, `muted`, `muted-foreground`, `accent`, `accent-foreground`, `border`, `input`, `ring`, and `destructive`.
 - Base palette remains monochrome: light mode near white surfaces with charcoal text; dark mode near black surfaces with warm-white text.
-- `primary` is for the strongest action or text emphasis. Do not introduce a separate brand color in Epic 1.
+- `primary` is for the strongest action or text emphasis.
 - `muted` and `muted-foreground` support metadata: dates, authors, prices, categories, language labels, and secondary navigation.
 - `border` defines structure with low contrast. Prefer borders over shadows for editorial separation.
-- If a future accent such as muted terracotta is needed, add it first as a named CSS token and document its use here before applying it.
+- **Epic 3 terracotta accent:** A named `--terracotta` token (`#9A3412`) is approved for the hero banner, featured cards, footer bar, and header triangle accent. It is exposed as `bg-terracotta` / `text-terracotta-foreground` and must not be used outside these editorial shell surfaces without updating this document.
 
 ## 3. Typography
 
-- Use `font-sans` for body, navigation, metadata, buttons, and commerce UI.
-- Use `font-heading` for editorial headings and hero titles. It currently resolves to the sans token; components must still use `font-heading` so an editorial serif can be introduced later without rewriting UI.
+- Use `font-sans` for body, navigation, metadata, buttons, and commerce UI. The sans stack is loaded via `next/font/google` as Inter (`--font-inter`).
+- Use `font-heading` for editorial headings and hero titles. The heading stack is loaded via `next/font/google` as Fraunces (`--font-fraunces`), a variable serif.
 - Body copy targets a comfortable reading line height around `leading-7` and a measure of 60 to 75 characters.
 - Heading scale for Epic 1: page hero `text-4xl` to `text-6xl`, section heading `text-2xl` to `text-4xl`, card title `text-lg` to `text-2xl`, metadata `text-sm`, captions `text-xs`.
 - French text often runs longer than English. Avoid fixed-width buttons, clipped labels, and uppercase-heavy UI that harms readability.
