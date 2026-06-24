@@ -11,6 +11,7 @@ import { Categories } from './collections/Categories'
 import { Media } from './collections/Media'
 import { Posts } from './collections/Posts'
 import { Users } from './collections/Users'
+import { BlogSidebar } from './globals/BlogSidebar'
 import { FeaturedItems } from './globals/FeaturedItems'
 import { Footer } from './globals/Footer'
 import { HeroBanner } from './globals/HeroBanner'
@@ -28,7 +29,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Authors, Categories, Posts, Books],
-  globals: [MainNavigation, Footer, SiteSettings, HeroBanner, FeaturedItems],
+  globals: [MainNavigation, Footer, SiteSettings, HeroBanner, FeaturedItems, BlogSidebar],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

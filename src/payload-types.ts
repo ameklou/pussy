@@ -101,6 +101,7 @@ export interface Config {
     'site-settings': SiteSetting;
     'hero-banner': HeroBanner;
     'featured-items': FeaturedItem;
+    'blog-sidebar': BlogSidebar;
   };
   globalsSelect: {
     'main-navigation': MainNavigationSelect<false> | MainNavigationSelect<true>;
@@ -108,6 +109,7 @@ export interface Config {
     'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
     'hero-banner': HeroBannerSelect<false> | HeroBannerSelect<true>;
     'featured-items': FeaturedItemsSelect<false> | FeaturedItemsSelect<true>;
+    'blog-sidebar': BlogSidebarSelect<false> | BlogSidebarSelect<true>;
   };
   locale: 'en' | 'fr';
   widgets: {
@@ -615,6 +617,24 @@ export interface FeaturedItem {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-sidebar".
+ */
+export interface BlogSidebar {
+  id: number;
+  sections?:
+    | {
+        heading: string;
+        body?: string | null;
+        url?: string | null;
+        urlLabel?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "main-navigation_select".
  */
 export interface MainNavigationSelect<T extends boolean = true> {
@@ -707,6 +727,24 @@ export interface FeaturedItemsSelect<T extends boolean = true> {
         image?: T;
         url?: T;
         type?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-sidebar_select".
+ */
+export interface BlogSidebarSelect<T extends boolean = true> {
+  sections?:
+    | T
+    | {
+        heading?: T;
+        body?: T;
+        url?: T;
+        urlLabel?: T;
         id?: T;
       };
   updatedAt?: T;
