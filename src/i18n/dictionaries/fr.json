@@ -24,5 +24,36 @@
     "categories": "Catégories",
     "allPosts": "Tous les articles",
     "noPosts": "Aucun article trouvé."
+  },
+  "bookstore": {
+    "eyebrow": "Librairie indépendante",
+    "title": "Catalogue de livres",
+    "summary": "Parcourez une sélection calme de livres littéraires, d'essais et d'objets éditoriaux choisis pour une lecture attentive.",
+    "searchLabel": "Rechercher des livres",
+    "searchPlaceholder": "Titre ou auteur",
+    "searchSubmit": "Rechercher",
+    "categories": "Catégories",
+    "allCategories": "Toutes les catégories",
+    "formats": "Formats",
+    "allFormats": "Tous les formats",
+    "noBooks": "Aucun livre ne correspond aux filtres actuels.",
+    "price": "Prix",
+    "isbn": "ISBN",
+    "authors": "Auteurs",
+    "addToCart": "Ajouter au panier",
+    "addedToCart": "Ajouté",
+    "relatedBooks": "Livres connexes",
+    "backToCatalog": "Retour au catalogue →",
+    "sidebarHeading": "Table de lecture",
+    "sidebarBody": "Utilisez les filtres pour passer d'un genre, d'une édition et d'un format à l'autre sans quitter le rythme du catalogue.",
+    "followUsHeading": "Suivez-nous",
+    "followUsBody": "Restez proche des nouveautés, des essais et des lectures via nos canaux éditoriaux.",
+    "detailSidebarHeading": "Note éditoriale",
+    "detailSidebarBody": "Associez chaque livre à une pratique de lecture plus lente : un auteur, un thème et un format adapté au moment.",
+    "formatLabels": {
+      "paperback": "Broché",
+      "hardcover": "Relié",
+      "ebook": "E-book"
+    }
   }
 }

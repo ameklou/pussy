@@ -44,4 +44,24 @@ test.describe('Frontend', () => {
 
     await expect(page).toHaveURL(`${baseUrl}/admin`)
   })
+
+  test('renders the English bookstore catalog with URL filter state', async ({ page }) => {
+    await page.goto(`${baseUrl}/en/books?search=atelier&format=ebook`)
+
+    await expect(page).toHaveURL(`${baseUrl}/en/books?search=atelier&format=ebook`)
+    await expect(page.getByRole('heading', { name: 'Book catalog' })).toBeVisible()
+    await expect(page.getByRole('searchbox', { name: 'Search books' })).toHaveValue('atelier')
+    await expect(page.getByRole('link', { name: 'E-book' })).toHaveAttribute('aria-current', 'true')
+    await expect(page.getByText('No books match the current filters.')).toBeVisible()
+  })
+
+  test('renders the French bookstore catalog shell', async ({ page }) => {
+    await page.goto(`${baseUrl}/fr/books`)
+
+    await expect(page).toHaveURL(`${baseUrl}/fr/books`)
+    await expect(page.locator('html')).toHaveAttribute('lang', 'fr')
+    await expect(page.getByRole('heading', { name: 'Catalogue de livres' })).toBeVisible()
+    await expect(page.getByRole('searchbox', { name: 'Rechercher des livres' })).toBeVisible()
+    await expect(page.getByRole('navigation', { name: 'Formats' })).toBeVisible()
+  })
 })

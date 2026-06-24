@@ -24,5 +24,36 @@
     "categories": "Categories",
     "allPosts": "All posts",
     "noPosts": "No posts found."
+  },
+  "bookstore": {
+    "eyebrow": "Independent bookstore",
+    "title": "Book catalog",
+    "summary": "Browse a quiet selection of literary books, essays, and editorial objects chosen for close reading.",
+    "searchLabel": "Search books",
+    "searchPlaceholder": "Title or author",
+    "searchSubmit": "Search",
+    "categories": "Categories",
+    "allCategories": "All categories",
+    "formats": "Formats",
+    "allFormats": "All formats",
+    "noBooks": "No books match the current filters.",
+    "price": "Price",
+    "isbn": "ISBN",
+    "authors": "Authors",
+    "addToCart": "Add to cart",
+    "addedToCart": "Added",
+    "relatedBooks": "Related books",
+    "backToCatalog": "Back to catalog →",
+    "sidebarHeading": "Reading desk",
+    "sidebarBody": "Use the filters to move between genres, editions, and formats without leaving the catalog rhythm.",
+    "followUsHeading": "Follow us",
+    "followUsBody": "Stay close to new arrivals, essays, and readings through our editorial channels.",
+    "detailSidebarHeading": "Editorial note",
+    "detailSidebarBody": "Pair each book with a slower reading practice: one author, one theme, and one format that fits the moment.",
+    "formatLabels": {
+      "paperback": "Paperback",
+      "hardcover": "Hardcover",
+      "ebook": "E-book"
+    }
   }
 }
