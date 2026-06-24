@@ -3,6 +3,8 @@ import { redirect } from 'next/navigation'
 
 import { getDictionary } from '@/i18n/dictionaries'
 import { DEFAULT_LOCALE, LOCALES, type Locale, isLocale } from '@/i18n/routing'
+import { HeroBanner } from '@/components/home/HeroBanner'
+import { FeaturedCards } from '@/components/home/FeaturedCards'
 
 type LocalePageProps = {
   readonly params: Promise<{
@@ -31,19 +33,14 @@ export default async function LocalePage({ params }: LocalePageProps) {
     redirect(`/${DEFAULT_LOCALE}`)
   }
 
-  const dictionary = getDictionary(localeParam)
+  const locale = localeParam
 
   return (
-    <section className="mx-auto grid min-h-[100dvh] max-w-[1200px] content-center gap-8 px-6 py-16 md:px-8 lg:px-12">
-      <div className="max-w-[720px] space-y-6">
-        <p className="text-sm font-medium text-muted-foreground">{dictionary.foundation.eyebrow}</p>
-        <h1 className="text-balance font-heading text-4xl font-semibold tracking-tight text-foreground md:text-6xl">
-          {dictionary.foundation.heading}
-        </h1>
-        <p className="max-w-[720px] text-lg leading-7 text-muted-foreground">
-          {dictionary.foundation.summary}
-        </p>
-      </div>
-    </section>
+    <div className="space-y-0">
+      <HeroBanner locale={locale} />
+      <section className="mx-auto max-w-[1200px] px-6 py-8 md:px-8 lg:px-12">
+        <FeaturedCards locale={locale} />
+      </section>
+    </div>
   )
 }
