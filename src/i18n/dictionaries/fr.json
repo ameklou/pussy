@@ -1,11 +1,18 @@
 {
   "foundation": {
-    "eyebrow": "Fondation francaise",
-    "heading": "French foundation UI",
-    "summary": "Le routage localise est pret pour l'interface editoriale publique."
+    "eyebrow": "Librairie éditoriale",
+    "heading": "Livres choisis et essais littéraires",
+    "summary": "Un espace minimaliste pour découvrir des livres indépendants, lire des essais et explorer l'art d'écrire."
   },
   "metadata": {
-    "title": "French foundation UI",
-    "description": "Interface de fondation pour le frontend public francais."
+    "title": "Chaatde — Librairie éditoriale",
+    "description": "Un blog éditorial et une librairie bilingues et minimalistes."
+  },
+  "layout": {
+    "cart": "Panier",
+    "languages": {
+      "en": "EN",
+      "fr": "FR"
+    }
   }
 }

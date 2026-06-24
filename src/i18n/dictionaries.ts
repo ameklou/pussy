@@ -2,6 +2,11 @@ import en from './dictionaries/en.json'
 import fr from './dictionaries/fr.json'
 import type { Locale } from './routing'
 
+type LayoutDictionary = {
+  readonly cart: string
+  readonly languages: Record<Locale, string>
+}
+
 type FoundationDictionary = {
   readonly foundation: {
     readonly eyebrow: string
@@ -12,6 +17,7 @@ type FoundationDictionary = {
     readonly title: string
     readonly description: string
   }
+  readonly layout: LayoutDictionary
 }
 
 const dictionaries = {

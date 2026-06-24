@@ -1,11 +1,18 @@
 {
   "foundation": {
-    "eyebrow": "English foundation",
-    "heading": "English foundation UI",
-    "summary": "Locale-aware routing is ready for the public editorial frontend."
+    "eyebrow": "Editorial bookstore",
+    "heading": "Curated books and literary essays",
+    "summary": "A minimalist space for discovering independent books, reading essays, and exploring the craft of writing."
   },
   "metadata": {
-    "title": "English foundation UI",
-    "description": "Foundation UI for the English public frontend."
+    "title": "Chaatde — Editorial Bookstore",
+    "description": "A minimalist bilingual editorial blog and bookstore."
+  },
+  "layout": {
+    "cart": "Shopping cart",
+    "languages": {
+      "en": "EN",
+      "fr": "FR"
+    }
   }
 }
